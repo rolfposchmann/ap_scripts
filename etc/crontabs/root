@@ -1,0 +1,14 @@
+#mode 0755
+
+# Reboot at 4:30am every day
+# Note: To avoid infinite reboot loop, wait 70 seconds
+# and touch a file in /etc so clock will be set
+# properly to 4:31 on reboot before cron starts.
+30 4 * * * sleep 70 && touch /etc/banner && reboot
+
+# Check every 30 minutes ping to radius
+# If it is failed, then reboot the router
+# Note: To avoid infinite reboot loop, wait 70 seconds and touch a file in /etc 
+# so clock will be set properly on reboot before cron starts.
+15,45 * * * * sleep 70 && touch /etc/banner && /root/pingRouterCheckReboot.sh
+
