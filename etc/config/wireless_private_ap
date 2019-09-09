@@ -1,0 +1,11 @@
+
+config wifi-iface
+	option encryption 'psk2+aes'
+	option device 'radio2G'
+	option key 'NAGistToll:)'
+	option disabled '0'
+	option mode 'ap'
+	option network 'lan'
+	option ssid 'SAW ID'
+	option ifname 'wlan_ID'
+  
